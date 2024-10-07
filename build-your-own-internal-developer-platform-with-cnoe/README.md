@@ -5,7 +5,7 @@ Welcome to the **CNOE Workshop**! This workshop will guide you through building 
 ## Table of Contents
 
 1. [Introduction to CNOE](./docs/01-introduction.md)
-    - Overview of CNO
+    - Overview of CNOE
     - Use Cases and Benefits
     - Prerequisites for this Workshop
 
@@ -16,23 +16,17 @@ Welcome to the **CNOE Workshop**! This workshop will guide you through building 
 
 3. [Configuring CNOE](./docs/03-how-cnoe-works.md)
     - Core Configuration Settings
-    - Managing Environment Variables
-    - Customizing the Platform
 
 4. [Deploying CNOE on Kubernetes](./docs/04-deploy-cnoe.md)
     - CNOE Architecture Overview
-    - Deploying CNOE using Helm Charts
-    - Monitoring CNOE Deployment
 
 5. [Reference Implementation](./docs/05-reference-implementation.md)
     - Introduction to CNOE Orchestration
-    - Deploying a Sample Application
-    - Managing Application Lifecycles
+    - A Reference Implementation Rollout
+    - Managing Application Life-cycles
 
 6. [Basic Application Deployment](./docs/06-basic-deployment-with-backstage.md)
-    - Introduction to CNOE Orchestration
     - Deploying a Sample Application
-    - Managing Application Lifecycles
 
 7. [Running Spark Jobs with Argo Workflows](./docs/07-ci-example-with-argo-workflow)
     - Deploying a Spark Job via Argo Workflow
@@ -42,7 +36,7 @@ Welcome to the **CNOE Workshop**! This workshop will guide you through building 
     - Crossplane Integration with Crossplane
 
 9. [Working with Cloud Resources](./docs/09-application-with-cloud-resources-crossplane.md)
-    - Provisioning Cloud Resources with Crossplan
+    - Provisioning Cloud Resources with Crossplane
     - Managing Cloud Infrastructure in CNOE
    
 10. [Best Practices and Troubleshooting](./docs/10-best-practices.md)
