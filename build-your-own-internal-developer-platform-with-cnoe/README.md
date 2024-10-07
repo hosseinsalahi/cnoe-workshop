@@ -28,7 +28,7 @@ Welcome to the **CNOE Workshop**! This workshop will guide you through building 
 6. [Basic Application Deployment](./docs/06-basic-deployment-with-backstage.md)
     - Deploying a Sample Application
 
-7. [Running Spark Jobs with Argo Workflows](./docs/07-ci-example-with-argo-workflow)
+7. [Running Spark Jobs with Argo Workflows](./docs/07-ci-example-with-argo-workflow.md)
     - Deploying a Spark Job via Argo Workflow
     - Monitoring and Managing Spark Workloads
 
