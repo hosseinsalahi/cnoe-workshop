@@ -14,7 +14,7 @@ Welcome to the **CNOE Workshop**! This workshop will guide you through building 
     - Setting Up Your Local Environment
     - Verifying the Setup
 
-3. [Configuring CNOE](./docs/03-how-cnoe-works.md)
+3. [How CNOE Works](./docs/03-how-cnoe-works.md)
     - Core Configuration Settings
 
 4. [Deploying CNOE on Kubernetes](./docs/04-deploy-cnoe.md)
