@@ -42,3 +42,10 @@ demo-aws-p7b7f-fg4l8   True    True     47m
 ```
 
 In the section we used a Backstage template to create a cloud resource in AWS via Crossplane and deploy an example application on K8s. 
+
+## Cleaning Up Resources
+You can use the following command to destroy the stack:
+
+```bash
+idpbuilder delete
+```

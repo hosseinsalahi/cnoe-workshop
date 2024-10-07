@@ -4,9 +4,9 @@ The idpbuilder reference implementation allows you to create and manage internal
 ## Prerequisites
 Before starting the installation process, ensure the following prerequisites are met:
 
-* idpbuilder: version 0.7.0 or later
-* kubectl: version 1.29 or later
-* Your system should have at least 8 GB RAM allocated to Docker/Podman container engine.
+- idpbuilder: version 0.7.0 or later
+- kubectl: version 1.29 or later
+- Your system should have at least 8 GB RAM allocated to Docker/Podman container engine.
 
 ## Installation
 `Note`: _This example assumes that you run the reference implementation with the default port configuration of 8443 for the idpBuilder. If you happen to configure a different host or port for the idpBuilder, the manifests in the reference example need to be updated and be configured with the new host and port.

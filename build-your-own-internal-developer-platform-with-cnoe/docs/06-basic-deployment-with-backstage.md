@@ -12,8 +12,7 @@ Backstage is an open-source platform developed by Spotify that helps teams manag
 3.	`Component:` A specific type of entity that refers to a piece of software or service. Components are the building blocks in a Backstage catalog and represent microservices, libraries, websites, or mobile apps within a system.
 4.	`System:` A logical grouping of components that serve a larger function. Systems can contain multiple components, and this hierarchical organization helps make it easier to understand the structure of an entire application.
 5.	`API:` APIs are also entities in the Backstage catalog. They represent service interfaces that define how different services or components communicate. API entities help track dependencies between services and document their usage.
-6.	`TechDocs:` Backstage integrates with TechDocs, which is a documentation generator and viewer for technical documentation. It helps in generating, storing, and serving documentation for services and components in one place, ensuring up-to-date documentation across teams.
-7.	`Plugins:` Backstage is highly extensible via plugins. Plugins can add new features, integrate external tools, or provide custom workflows inside the Backstage portal. Examples include Kubernetes monitoring, CI/CD pipeline integration, or incident management tools.
+6.	`Plugins:` Backstage is highly extensible via plugins. Plugins can add new features, integrate external tools, or provide custom workflows inside the Backstage portal. Examples include Kubernetes monitoring, CI/CD pipeline integration, or incident management tools.
 
 <p align="center">
     <img width="800" src="./images/backstage-ecosystem.png">
@@ -48,3 +47,10 @@ Screenshot
 3. Backstage registered the application as a component in Backstage.
 4. ArgoCD deployed the manifests stored in the repo to the cluster.
 5. Backstage retrieved application health from ArgoCD API, then displayed it.
+
+## Cleaning Up Resources
+You can use the following command to destroy the stack:
+
+```bash
+idpbuilder delete
+```
