@@ -75,8 +75,8 @@ git clone https://github.com/cnoe-io/stacks.git
 cd stacks
 # run idpbuilder against the local directory
 idpbuilder create \
-  -p examples/basic/package1\
-  -p examples/basic/package2
+  -p ./basic/package1\
+  -p ./basic/package2
 ```
 Running this command should create three additional ArgoCD applications in your cluster.
 
