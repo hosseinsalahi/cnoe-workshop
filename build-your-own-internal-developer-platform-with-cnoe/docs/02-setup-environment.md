@@ -6,7 +6,7 @@ Welcome to `idpbuilder`, a tool designed to simplify the setup and management of
 ## Prerequisites
 Before installing idpbuilder, ensure you have the following:
 
-* A container engine is needed locally, such as:
+A container engine is needed locally, such as:
 - [Docker desktop](https://www.docker.com/get-started/) (recommended)
 - [Podman desktop](https://podman-desktop.io/) (idpbuilder can create a cluster using podman rootful)
 - [Finch](https://runfinch.com/)

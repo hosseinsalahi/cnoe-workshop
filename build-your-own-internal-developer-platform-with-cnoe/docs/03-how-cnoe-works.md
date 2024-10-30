@@ -74,7 +74,7 @@ Once the configuration is parsed, idpbuilder leverages Kubernetes operator such 
 
 When idpbuilder creates an environment for you, it performs the following tasks.
 
-* Create a local cluster if one does not exist yet.
-* Create a [self-signed certificate](https://cnoe.io/docs/reference-implementation/installations/idpbuilder/how-it-works#self-signed-certificate), then set it as the default TLS certificate for ingress-nginx.
-* [Configure CoreDNS](https://cnoe.io/docs/reference-implementation/installations/idpbuilder/how-it-works#in-cluster-dns-configuration) to ensure names are resolved correctly.
-* Install [Core Packages](https://cnoe.io/docs/reference-implementation/installations/idpbuilder/how-it-works#core-packages), then hands control over to ArgoCD.
+- Create a local cluster if one does not exist yet.
+- Create a [self-signed certificate](https://cnoe.io/docs/reference-implementation/installations/idpbuilder/how-it-works#self-signed-certificate), then set it as the default TLS certificate for ingress-nginx.
+- [Configure CoreDNS](https://cnoe.io/docs/reference-implementation/installations/idpbuilder/how-it-works#in-cluster-dns-configuration) to ensure names are resolved correctly.
+- Install [Core Packages](https://cnoe.io/docs/reference-implementation/installations/idpbuilder/how-it-works#core-packages), then hands control over to ArgoCD.

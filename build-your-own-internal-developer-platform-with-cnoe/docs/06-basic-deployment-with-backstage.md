@@ -42,11 +42,11 @@ Screenshot
 
 ### Deployment Review
 
-1. Backstage created a git repository, then pushed templated contents to it.
-2. Backstage created an ArgoCD Application and pointed it to the git repository.
-3. Backstage registered the application as a component in Backstage.
-4. ArgoCD deployed the manifests stored in the repo to the cluster.
-5. Backstage retrieved application health from ArgoCD API, then displayed it.
+- Backstage created a git repository, then pushed templated contents to it.
+- Backstage created an ArgoCD Application and pointed it to the git repository.
+- Backstage registered the application as a component in Backstage.
+- ArgoCD deployed the manifests stored in the repo to the cluster.
+- Backstage retrieved application health from ArgoCD API, then displayed it.
 
 ## Cleaning Up Resources
 You can use the following command to destroy the stack:

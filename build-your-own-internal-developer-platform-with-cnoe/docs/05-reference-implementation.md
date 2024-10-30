@@ -20,16 +20,16 @@ idpbuilder create --use-path-routing \
 
 ## Installation Review
 It will few minutes to deploy everything. Let's take a look at what we deployed:
-* A Kind cluster 
-* Gittea
-* Ingress-NGINX
-* ArgoCD 
-* Argo Workflows to enable workflow orchestrations.
-* Backstage as the UI for software catalog and templating.
-* Crossplane, AWS providers, and basic compositions for deploying cloud related resources (needs your credentials for this to work)
-* External Secrets to generate secrets and coordinate secrets between applications.
-* Keycloak as the identity provider for applications.
-* Spark Operator to demonstrate an example Spark workload through Backstage. 
+- A Kind cluster 
+- Gittea
+- Ingress-NGINX
+- ArgoCD 
+- Argo Workflows to enable workflow orchestrations.
+- Backstage as the UI for software catalog and templating.
+- Crossplane, AWS providers, and basic compositions for deploying cloud related resources (needs your credentials for this to work)
+- External Secrets to generate secrets and coordinate secrets between applications.
+- Keycloak as the identity provider for applications.
+- Spark Operator to demonstrate an example Spark workload through Backstage. 
 
 <p align="center">
     <img src="./images/reference-implementation-cnoe.png" alt="Material Bread logo">
