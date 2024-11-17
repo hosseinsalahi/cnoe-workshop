@@ -1,6 +1,6 @@
 # CNOE Workshop: Introduction to CNOE
 
-Welcome to the **CNOE (Cloud-Native Orchestration Engine)** Workshop! In this section, we will provide an introduction to CNOE (pronounced Kuh.no), its purpose, use cases, and the prerequisites required for this workshop.
+Welcome to the **CNOE (Cloud Native Operational Excellence)** Workshop! In this section, we will provide an introduction to CNOE (pronounced Kuh.no), its purpose, use cases, and the prerequisites required for this workshop.
 
 ## Overview of CNOE
 
