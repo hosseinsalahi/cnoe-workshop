@@ -1,6 +1,6 @@
 # CNOE Workshop: Build Your Own Internal Developer Platform
 
-Welcome to the **CNOE Workshop**! This workshop will guide you through building your own internal developer platform using CNOE (Cloud-Native Orchestration Engine). The workshop is structured into several sections, each covering a specific part of the platform setup, deployment, and management.
+Welcome to the **CNOE Workshop**! This workshop will guide you through building your own internal developer platform using CNOE (Cloud Native Operational Excellence). The workshop is structured into several sections, each covering a specific part of the platform setup, deployment, and management.
 
 ## Table of Contents
 
