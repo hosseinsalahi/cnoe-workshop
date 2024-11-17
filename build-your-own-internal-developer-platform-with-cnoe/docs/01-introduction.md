@@ -4,7 +4,7 @@ Welcome to the **CNOE (Cloud Native Operational Excellence)** Workshop! In this 
 
 ## Overview of CNOE
 
-CNOE, short for Cloud-Native Orchestration Engine, is a platform designed to simplify and automate the management of cloud-native applications and infrastructure. It provides developers and DevOps teams with a consistent interface to deploy, monitor, and manage applications in Kubernetes clusters, as well as provision and orchestrate cloud resources.
+CNOE, short for Cloud Native Operational Excellence, is a platform designed to simplify and automate the management of cloud-native applications and infrastructure. It provides developers and DevOps teams with a consistent interface to deploy, monitor, and manage applications in Kubernetes clusters, as well as provision and orchestrate cloud resources.
 
 ### Key Features:
 - **Unified Developer Portal**: CNOE integrates tools like CI/CD, infrastructure provisioning, and application monitoring in a single interface.
