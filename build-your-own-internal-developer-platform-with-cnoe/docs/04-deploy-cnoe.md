@@ -1,5 +1,5 @@
 # idpbuilder Usage 
-In this section, we will test our local development environment by installing the core packages. These core packages includes the following components: 
+In this section, we will test our local development environment by installing the core packages. These core packages include the following components: 
 
 - ArgoCD is the GitOps solution to deploy manifests to Kubernetes clusters. In this project, a package is an ArgoCD application. 
 - Gitea (Code Hosting, CD/CD, Artifactory)
@@ -8,22 +8,24 @@ In this section, we will test our local development environment by installing th
 ## Prerequisites
 Before starting the installation process, ensure the following prerequisites are met:
 
-- idpbuilder: version 0.7.0 or later
-- kubectl: version 1.29 or later
-- Your system should have at least 8 GB RAM allocated to Docker/Podman container engine.
+- idpbuilder: version 0.9.0 or later
+- kubectl: version 1.31 or later
+- Your system should have at least 8 GB of RAM allocated to the Docker/Podman container engine.
+
+For this workshop, the assumption is that you are deploying the CNOE on your local machine. If you have opted for a remote host, such as a cloud-based VM, please follow [here](https://cnoe.io/docs/reference-implementation/idpbuilder/usage#running-idpbuilder-on-a-remote-host).
 
 ## Installation
 
-`Note`: _This example assumes that you run the reference with the default port configuration of 8443 for the idpBuilder. If you happen to configure a different host or port for the idpbuilder, the manifests in the reference example need to be updated and be configured with the new host and port.
+`Note`: _This example assumes that you run the reference with the default port configuration of 8443 for the idpBuilder. If you like to configure a different host or port for the idpbuilder, the manifests in the reference example should be updated and configured with the new host and port.
 
 When idpbuilder creates an environment for you, it performs the following tasks.
 
 - Create a local cluster if one does not exist yet.
 - Create a self-signed certificate, then set it as the default TLS certificate for ingress-nginx.
 - Configure CoreDNS to ensure names are resolved correctly.
-- Install Core Packages, then hands control over to ArgoCD.
+- Install Core Packages, then hand control over to ArgoCD.
 
-For more information, please refer to the idpbuiulder [official documentation](https://cnoe.io/docs/reference-implementation/installations/idpbuilder/how-it-works).  
+For more information, please refer to the idpbuiulder [official documentation](https://cnoe.io/docs/reference-implementation/idpbuilder/usage).  
 
 Use the following command to install the stack:
 
@@ -34,7 +36,13 @@ idpbuilder create
 ## Installation Review
 It will few minutes to deploy everything. Let's take a look at what we deployed:
 
-- Kind cluster 
+- Kind cluster
+```bash
+idpbuilder get clusters
+Jun 25 09:11:46 INFO enabling experimental podman provider
+NAME       EXTERNAL-PORT   KUBE-API                  TLS     KUBE-PORT   NODES
+localdev   8443            https://127.0.0.1:51701   false   6443        localdev-control-plane
+```
 - Gittea
 - Ingress-NGINX
 - ArgoCD
@@ -74,9 +82,7 @@ To deploy these packages, run the following command:
 git clone https://github.com/cnoe-io/stacks.git
 cd stacks
 # run idpbuilder against the local directory
-idpbuilder create \
-  -p ./basic/package1
-  -p ./basic/package2
+idpbuilder create -p ./basic/package1 -p ./basic/package2
 ```
 Running this command should create three additional ArgoCD applications in your cluster.
 
@@ -120,7 +126,7 @@ You can verify this by going to this address in your browser: https://gitea.cnoe
 However, the second package directory defines two normal ArgoCD applications referencing a remote repository. They are applied as-is.
 
 ## External Access
-Idpbuilder comes with `ingress-nginx`, and this is meant to be used as an easy way to expose services to the outside world.  By default, idpbuilder exposes the ingress-nginx service on host port 8443 and Kubernetes Ingress objects are created for core packages. See the [networking overview section](https://cnoe.io/docs/reference-implementation/installations/idpbuilder/how-it-works#networking) for more information. Here is an example for an ingress: 
+idpbuilder comes with `ingress-nginx`, and can be used as an easy way to expose services to the outside world.  By default, idpbuilder exposes the ingress-nginx service on host port 8443, and Kubernetes Ingress objects are created for core packages. See the [networking overview section](https://cnoe.io/docs/intro/idpbuilder/how-it-works#networking) for more information. Here is an example of an ingress: 
 
 ```yaml
 apiVersion: networking.k8s.io/v1
