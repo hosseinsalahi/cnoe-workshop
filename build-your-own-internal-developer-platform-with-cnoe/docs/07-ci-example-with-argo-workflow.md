@@ -10,9 +10,9 @@ Before deploying a Spark job using Argo Workflow in Backstage, ensure the follow
 
 ### Spark Job Deployment 
 Now, we will deploy a simple Apache Spark job through Argo Workflows.
-Before create our new application, let's take a look at both [Argo Workflow and Spark job templates](https://github.com/cnoe-io/stacks/blob/main/ref-implementation/backstage-templates/entities/argo-workflows/skeleton/manifests/deployment.yaml). 
+Before creating our new application, let's take a look at both [Argo Workflow and Spark job templates](https://github.com/cnoe-io/stacks/blob/main/ref-implementation/backstage-templates/entities/argo-workflows/skeleton/manifests/deployment.yaml). 
 
-Login to the [Backstage](https://cnoe.localtest.me:8443/):
+Log in to the [Backstage](https://cnoe.localtest.me:8443/):
 - Click on the Create... button on the left,
 - Then select the `Basic Argo Workflow with a Spark Job template`.
 - Type demo-spark for the name field
@@ -24,10 +24,10 @@ Deployment processes are the same as the first example. Instead of deploying a p
 
 ### Deployment Review
 
-In the entity page, on CI/CD tab, and it should say running or succeeded:
+In the entity page, on the CI/CD tab, it should say running or succeeded:
 - You can click the name in the card to go to the Argo Workflows UI to view more details about this workflow run.
-- When prompted to log in, click the login button under single sign on.
-- [Argo Workflows](https://cnoe.localtest.me:8443/argo-workflows/workflows/argo?&limit=50) is configured to use SSO with Keycloak allowing you to login with the same credentials as Backstage login.
+- When prompted to log in, click the login button under single sign-on.
+- [Argo Workflows](https://cnoe.localtest.me:8443/argo-workflows/workflows/argo?&limit=50) is configured to use SSO with Keycloak, allowing you to log in with the same credentials as Backstage login.
 - We can also verify the deployment by checking the resources created in our kind cluster:
 
 ```bash
@@ -36,17 +36,21 @@ NAME             SYNC STATUS   HEALTH STATUS
 spark-operator   Synced        Healthy
 
 kubectl -n argo get workflows.argoproj.io -A
-NAMESPACE   NAME         STATUS    AGE    MESSAGE
-argo        demo-spark   Running   4m4s
+NAMESPACE   NAME       STATUS    AGE    MESSAGE
+argo        demo-job   Running   113s
 
 kubectl -n argo get sparkapplications.sparkoperator.k8s.io
-NAME                  STATUS      ATTEMPTS   START                  FINISH       AGE
-spark-pi-demo-spark   SUBMITTED   1          2024-10-07T20:56:25Z   <no value>   4m26s
+NAME                STATUS      ATTEMPTS   START                  FINISH       AGE
+spark-pi-demo-job   SUBMITTED   1          2025-06-25T08:09:17Z   <no value>   117s
 ```
 
-`Note:` Argo Workflows are not usually deployed this way. This is just an example to show you how you can integrate workflows, backstage, and spark.
+`Note:` Argo Workflows are not usually deployed this way. This is just an example to show you how you can integrate workflows, backstage, and Spark.
 
-Back in the entity page, you can view more details about Spark jobs by navigating to the Spark tab.
+Back in the entity page, you can view more details about Spark jobs by navigating to the Spark or CI/CD tab on the Backstage UI.
+
+<p align="center">
+    <img width=1200" height="500" src="./images/spark-job-status.png">
+</p>
 
 ## Cleaning Up Resources
 You can use the following command to destroy the stack:
