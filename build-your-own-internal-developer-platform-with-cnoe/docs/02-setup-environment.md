@@ -1,7 +1,7 @@
 # CONE Installation 
 
 ## Idpbuilder: Simplifying Internal Developer Platforms with CNOE
-Welcome to `idpbuilder`, a tool designed to simplify the setup and management of internal developer platforms using the power of CNOE. The project provides to deployment methods by using your [local machine with a container runtime (Podman or Docker)](https://cnoe.io/docs/reference-implementation/installations/idpbuilder) or to [AWS](https://cnoe.io/docs/reference-implementation/installations/app-idp). This guide will walk you through setting up idpbuilder on your local machine using your selected container runtime.
+Welcome to `idpbuilder`, a tool designed to simplify the setup and management of internal developer platforms using the power of CNOE. The project provides two deployment methods by using your [local machine with a container runtime (Podman or Docker)](https://cnoe.io/docs/reference-implementation/installations/idpbuilder) or to [AWS](https://cnoe.io/docs/reference-implementation/installations/app-idp). This guide will walk you through setting up idpbuilder on your local machine using your selected container runtime.
 
 ## Prerequisites
 Before installing idpbuilder, ensure you have the following:
@@ -11,7 +11,7 @@ A container engine is needed locally, such as:
 - [Podman desktop](https://podman-desktop.io/) (idpbuilder can create a cluster using podman rootful)
 - [Finch](https://runfinch.com/)
 
-`Note:` Set the DOCKER_HOST env var property using podman to let idpbuilder to talk with the engine (e.g export DOCKER_HOST="unix:///var/run/docker.sock")
+`Note:` Set the DOCKER_HOST env var property using podman to let idpbuilder talk with the engine (e.g, export DOCKER_HOST="unix:///var/run/docker.sock")
 
 For this guideline, we opted for [podman container engine](https://podman.io/docs/installation) on MacOS (M2 ARM64). 
 
@@ -22,7 +22,7 @@ podman machine init --cpus 2 --memory 8192 # You need at least 8GB of memory to 
 podman machine set --rootful
 podman machine start
 ```
-You can the verify the machine creation using:
+You can verify the machine creation using:
 
 ```bash
 podman machine ls
@@ -74,5 +74,5 @@ Flags:
 Use "idpbuilder [command] --help" for more information about a command.
 ```
 
-For installation alternatives, please refer to the [official documentation](https://cnoe.io/docs/reference-implementation/installations/idpbuilder/quick-start#running-in-codespaces).
-In the [next section](), we will take quick look at how idpbuilder works. 
+For installation alternatives, please refer to the [official documentation](https://cnoe.io/docs/reference-implementation/idpbuilder#running-ipdbuilder-in-codespaces).
+In the next section, we will take a quick look at how idpbuilder works. 
