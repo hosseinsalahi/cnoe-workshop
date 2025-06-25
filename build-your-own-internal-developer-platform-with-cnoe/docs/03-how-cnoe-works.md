@@ -25,11 +25,11 @@ Once the configuration file is defined, idpbuilder parses it and converts the de
 
 ```bash
 kubectl get crds | grep cnoe
-custompackages.idpbuilder.cnoe.io    2024-10-07T15:18:50Z
-gitrepositories.idpbuilder.cnoe.io   2024-10-07T15:18:50Z
-localbuilds.idpbuilder.cnoe.io       2024-10-07T15:18:51Z
+custompackages.idpbuilder.cnoe.io    2025-06-25T06:27:02Z
+gitrepositories.idpbuilder.cnoe.io   2025-06-25T06:27:02Z
+localbuilds.idpbuilder.cnoe.io       2025-06-25T06:27:03Z
 ```
-Let's take a look at one of this CRs: 
+Let's take a look at one of these CRs: 
 
 ```bash
 kubectl get gitrepositories.idpbuilder.cnoe.io -n idpbuilder-localdev
@@ -67,14 +67,40 @@ spec:
 ```
 
 ### 3. Environment-Specific Overrides
-idpbuilder supports environment-specific configurations. You can define common configurations that apply to all environments, and override specific parameters for each environment (e.g., staging, production). For instance, you might want to scale up the number of replicas for production while keeping them minimal in development.
+idpbuilder supports environment-specific configurations. You can define common configurations that apply to all environments, and override specific parameters for each environment (e.g., staging, production). For instance, you could scale up the number of replicas for production while keeping them minimal in development.
 
 ### 4. Automated Deployment
-Once the configuration is parsed, idpbuilder leverages Kubernetes operator such as ArgoCD to apply the configuration, deploy services, and uses Terraform or Crossplane to build infrastructure in your target environment. This automation eliminates the need for manual application and infrastructure setup.
+Once the configuration is parsed, idpbuilder leverages a Kubernetes operator, such as ArgoCD to apply the configuration, deploy services, and uses Terraform or Crossplane to build infrastructure in your target environment. This automation eliminates the need for manual application and infrastructure setup.
 
 When idpbuilder creates an environment for you, it performs the following tasks.
 
 - Create a local cluster if one does not exist yet.
-- Create a [self-signed certificate](https://cnoe.io/docs/reference-implementation/installations/idpbuilder/how-it-works#self-signed-certificate), then set it as the default TLS certificate for ingress-nginx.
+- Create a [self-signed certificate](https://cnoe.io/docs/intro/idpbuilder/how-it-works#self-signed-certificate), then set it as the default TLS certificate for ingress-nginx.
+- By default, idpbuilder uses `cnoe.localtest.me` as the base domain for all exposed services as documented [here](https://cnoe.io/docs/intro/idpbuilder/how-it-works#dns-configuration).
 - [Configure CoreDNS](https://cnoe.io/docs/reference-implementation/installations/idpbuilder/how-it-works#in-cluster-dns-configuration) to ensure names are resolved correctly.
 - Install [Core Packages](https://cnoe.io/docs/reference-implementation/installations/idpbuilder/how-it-works#core-packages), then hands control over to ArgoCD.
+- The local Gitea instance created by idpbuilder contains a built-in [OCI registry](https://cnoe.io/docs/intro/idpbuilder/how-it-works#local-oci-registry) for hosting container images as "packages" in Gitea nomenclature.
+
+### 5. Example Commands
+
+To specify the Kubernetes version, you can use the following command: 
+
+```bash
+idpbuilder create --kube-version v1.27.3
+```
+Supported versions are available [here](https://github.com/kubernetes-sigs/kind/releases)
+
+You bring your Kind configuration and specify it by using the `--kind-config` flag.
+
+```bash
+idpbuilder create --build-name local --kind-config ./my-kind.yaml
+```
+You can increase the verbosity of idpbuilder for troubleshooting as shown below: 
+
+```bash
+idpbuilder create -l debug
+```
+
+
+
+
