@@ -1,9 +1,9 @@
 # Basic Deployment
-We can now proceed with deploying a sample application deployment into the backstage. Before deep dive to this example, let's take a short look at what backstage is and some terminology is its ecosystem.
+We can now proceed with deploying a sample application into the backstage. Before we deep dive into this example, let's take a look at what backstage is and some terminology is its ecosystem.
 
 ## Backstage
 
-Backstage is an open-source platform developed by Spotify that helps teams manage and maintain infrastructure, services, and documentation in a unified interface. It provides a developer portal that centralizes internal tools, reduces complexity, and streamlines workflows by offering features such as software catalogs, documentation management, and plugin integration. It’s built with the goal of improving developer productivity by allowing them to focus on code rather than tooling and infrastructure.
+Backstage is an open-source platform developed by Spotify that helps teams manage and maintain infrastructure, services, and documentation in a unified interface. It provides a developer portal that centralizes internal tools, reduces complexity, and streamlines workflows by offering features such as software catalogs, documentation management, and plugin integration. It’s built to improve developer productivity by allowing them to focus on code rather than tooling and infrastructure.
 
 ### Backstage Resources Terminology
 
@@ -26,7 +26,7 @@ Let's start by deploying a simple application to the cluster through [Backstage]
     <img width=1200" height="500" src="./images/basic-app-select.png">
 </p>
 
-- In the next screen, type demo for the name field, then click `Review`, then `Create`. Once steps run, click the `Open In Catalog` button to go to the entity page.
+- In the next screen, type demo for the name field, then click `Review`, then `Create`. Once the steps run, click the `Open In Catalog` button to go to the entity page.
 
 <p align="center">
     <img width=1200" height="500" src="./images/basic-app-creation.png">
@@ -36,21 +36,20 @@ Let's start by deploying a simple application to the cluster through [Backstage]
     <img width=1200" height="500" src="./images/basic-app-success.png">
 </p>
 
-- In the demo entity page, you will notice a ArgoCD overview card associated with this entity. You can click on the ArgoCD Application name to see more details.
+- In the demo entity page, you will notice an ArgoCD overview card associated with this entity. You can click on the ArgoCD Application name to see more details.
 
-Screenshot
+<p align="center">
+    <img width=1200" height="500" src="./images/argocd-backstage-success.png">
+</p>
+
+<p align="center">
+    <img width=1200" height="500" src="./images/argocd-ui-success.png">
+</p>
 
 ### Deployment Review
 
-- Backstage created a git repository, then pushed templated contents to it.
+- Backstage created a Git repository and then pushed the templated contents to it.
 - Backstage created an ArgoCD Application and pointed it to the git repository.
 - Backstage registered the application as a component in Backstage.
 - ArgoCD deployed the manifests stored in the repo to the cluster.
-- Backstage retrieved application health from ArgoCD API, then displayed it.
-
-## Cleaning Up Resources
-You can use the following command to destroy the stack:
-
-```bash
-idpbuilder delete
-```
+- Backstage retrieved application health from the ArgoCD API, then displayed it.
